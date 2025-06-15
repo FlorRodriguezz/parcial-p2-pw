@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión Productos y Pedidos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="init()">
+
+  <!-- Sección Registro y Login -->
+  <div id="registroLogin">
+    <h2>Registro</h2>
+    <input id="regNombre" placeholder="Nombre" />
+    <input id="regEmail" type="email" placeholder="Email" />
+    <input id="regPassword" type="password" placeholder="Contraseña" />
+    <select id="regRol">
+      <option value="">Rol</option>
+      <option value="admin">Admin</option>
+      <option value="cliente">Cliente</option>
+    </select>
+    <button onclick="registrar()">Registrar</button>
+    <p id="regMensaje"></p>
+
+    <h2>Login</h2>
+    <input id="loginEmail" type="email" placeholder="Email" />
+    <input id="loginPassword" type="password" placeholder="Contraseña" />
+    <button onclick="login()">Login</button>
+    <p id="loginMensaje"></p>
+  </div>
+
+  <!-- Información del usuario logueado-->
+  <div id="usuarioInfo" style="display:none">
+    <p>
+      Usuario: <span id="usuarioNombre"></span> |
+      Rol: <span id="usuarioRol"></span>
+    </p>
+    <button id="logoutBtn" onclick="logout()" style="display:none;">Cerrar sesión</button>
+  </div>
+
+  <!-- Contenido Privado
+       Visible solo tras login 
+       (para todos los roles)-->
+  <div id="contenidoPrivado" style="display:none">
+
+    <!-- Consultar stock de productos -->
+    <p><strong>Consultar stock:</strong></p>
+    <input id="nombre" placeholder="Nombre producto" />
+    <button onclick="consultarStock()">Consultar</button>
+    <p id="stockDisplay"></p>
+
+    <!-- Sección para agregar productos
+         Solo visible para rol admin -->
+    <div id="seccionAgregarProducto" style="display:none">
+      <h3>Agregar producto</h3>
+      <input id="nuevoNombre" placeholder="Nombre" />
+      <input type="text" id="descripcionProducto" placeholder="Descripción" /><br />
+      <input id="nuevoPrecio" type="number" placeholder="Precio" />
+      <input id="nuevoStock" type="number" placeholder="Stock" />
+      <input type="text" id="imagenProducto" placeholder="URL de imagen" /><br />
+      <button onclick="agregarProducto()">Agregar</button>
+      <p id="nuevoProductoResultado"></p>
+    </div>
+    
+    <!-- Sección para editar productos
+         Solo visible para rol admin-->
+    <div id="seccionEditarProducto" style="display:none; margin-top:20px;">
+      <h3>Editar producto</h3>
+      <input id="editarId" type="hidden" />
+      <input id="editarNombre" placeholder="Nuevo nombre" />
+      <input type="text" id="editarDescripcion" placeholder="Descripción" /><br />
+      <input id="editarPrecio" type="number" placeholder="Precio" />
+      <input id="editarStock" type="number" placeholder="Stock" />
+      <input type="text" id="editarImagen" placeholder="URL de imagen" /><br />
+      <button onclick="guardarEdicionProducto()">Guardar</button>
+      <button onclick="cancelarEdicionProducto()">Cancelar</button>
+      <p id="editarProductoResultado"></p>
+    </div>
+
+    <!-- Listado de productos-->
+    <h3>Productos</h3>
+    <button onclick="listarProductos()">Cargar</button>
+    <ul id="listaProductos"></ul>
+
+    <!--Sección Pedidos -->
+    <section id="seccionPedidos" style="display:none">
+
+      <!-- Crear pedido (solo clientes) -->
+      <div id="pedidoForm">
+        <label for="selectProducto">Producto:</label>
+        <select id="selectProducto"></select>
+
+        <label for="cantidadProducto">Cantidad:</label>
+        <input type="number" id="cantidadProducto" min="1" />
+
+        <button onclick="agregarProductoAlCarrito()">Agregar</button>
+        <span id="mensajeAgregarProducto" style="color:red; margin-left: 10px;"></span>
+
+        <h4>Carrito:</h4>
+        <ul id="carritoLista"></ul>
+        <button onclick="enviarPedidoDesdeCarrito()">Enviar Pedido</button>
+        <div id="mensajeCrearPedido" style="margin-top:10px;"></div>
+      </div>
+
+      <!-- Ver pedidos propios (solo clientes) -->
+      <div id="misPedidosSection" style="display:none">
+        <h3>Ver mis pedidos (Cliente)</h3>
+        <button onclick="verMisPedidos()">Ver pedidos</button>
+        <pre id="misPedidos"></pre>
+      </div>
+
+      <!-- Ver todos los pedidos (solo admin) -->
+      <div id="todosPedidosSection" style="display:none">
+        <h3>Ver todos los pedidos (Admin)</h3>
+        <button onclick="verTodosPedidos()">Ver todos</button>
+        <pre id="todosPedidos"></pre>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
