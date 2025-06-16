@@ -1,0 +1,73 @@
+.navbar {
+  background-color: #121212 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  padding: 0.6rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1030;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #eee !important;
+  letter-spacing: 1.2px;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color: rgb(158, 138, 138) !important; 
+  text-decoration: none;
+}
+
+.link {
+  color: #ddd !important;
+  margin: 0 0.4rem;
+  transition: color 0.25s ease;
+}
+
+.link:hover {
+  color: rgb(158, 138, 138) !important;
+  text-decoration: none;
+}
+
+.usuario {
+  color: #bbb !important;
+  font-weight: 600;
+  margin-right: 0.8rem;
+  cursor: default;
+  user-select: none;
+}
+
+.logoutBtn {
+  border-color: rgb(158, 138, 138) !important;
+  color: rgb(158, 138, 138) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: rgb(158, 138, 138) !important;
+  color: #121212 !important;
+}
+
+.searchForm {
+  margin-left: 1rem;
+}
+
+.searchInput {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #ccc;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.searchInput::placeholder {
+  color: #777;
+}
+
+.searchInput:focus {
+  border-color: rgb(158, 138, 138);
+}

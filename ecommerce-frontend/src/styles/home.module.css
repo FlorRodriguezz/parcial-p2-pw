@@ -1,0 +1,79 @@
+.home {
+  background-color: #111;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111;
+  padding: 100px 20px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.categoryCard {
+  height: 100%;
+  text-align: center;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.categoryCard img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.categoryCard p {
+  margin-top: 10px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+}
+.categoryCard a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+}
+.categoryCard a:focus {
+  outline: none;
+  box-shadow: none;
+}
+

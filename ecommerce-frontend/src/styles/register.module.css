@@ -1,0 +1,70 @@
+.registerContainer {
+  min-height: 100vh;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+.registerBox {
+  background-color: #222;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.registerBox h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+select {
+  background-color: #333;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus,
+select:focus {
+  border-color: #9e8a8a;
+}
+
+.registerBtn {
+  background-color: transparent;
+  border: 1px solid rgb(158, 138, 138);
+  color: rgb(158, 138, 138);
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: rgb(158, 138, 138);
+  color: #121212;
+  border-color: rgb(158, 138, 138);
+}
